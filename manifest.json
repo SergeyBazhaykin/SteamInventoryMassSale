@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Steam Inventory Mass Sale",
+  "version": "0.1.1",
+  "description": "Mass selling items with user-friendly interface.",
+  "icons": {
+    "16": "images/SIMS_16.png",
+    "32": "images/SIMS_32.png",
+    "48": "images/SIMS_48.png",
+    "64": "images/SIMS_64.png",
+    "128": "images/SIMS_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://steamcommunity.com/id*inventory/",
+        "http://steamcommunity.com/id*inventory/"
+      ],
+      "js": [
+        "content_scripts/SIMS.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "https://steamcommunity.com/id*inventory/",
+    "http://steamcommunity.com/id*inventory/",
+    "https://steamcommunity-a.akamaihd.net/public/javascript/jquery-1.11.1.min.js?v=.isFTSRckeNhC"
+  ],
+  "web_accessible_resources" : ["/content_scripts/script.js"],
+  "browser_action": {
+    "default_icon": {
+      "16": "images/SIMS_16.png",
+      "32": "images/SIMS_32.png",
+      "48": "images/SIMS_48.png",
+      "64": "images/SIMS_64.png",
+      "128": "images/SIMS_128.png"
+    },
+    "default_title": "SIMS",
+    "default_popup": "popup/popup.html"
+  }
+}
