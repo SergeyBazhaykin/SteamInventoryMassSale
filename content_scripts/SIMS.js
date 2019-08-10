@@ -116,12 +116,12 @@ function simsLog3(message) {
 function simsLog4(message) {
   let inn = simsLogInv.innerHTML.split('<br>');
   if (lastMes4 === message) {
-    totFail++;
-    inn[3] = message + '. Total: ' + totSel;
+    totalFailed++;
+    inn[3] = message + '. Total: ' + totalFailed;
   } else {
-    totFail = 1;
+    totalFailed = 1;
     lastMes4 = message;
-    inn[3] = message + '. Total: ' + totSel;
+    inn[3] = message + '. Total: ' + totalFailed;
   }
   simsLogInv.innerHTML = inn.join('<br>');
 }
