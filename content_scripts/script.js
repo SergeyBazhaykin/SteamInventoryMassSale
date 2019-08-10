@@ -9,11 +9,9 @@ window.addEventListener('message', function(event) {
 function appStep3(price) {
   for (let e of elements) {
     if (!e.hasChildNodes()) continue;
-    let C = e.childNodes;
-    let inputC = C[0];
-    if (inputC.type !== 'checkbox' || !inputC.checked) continue;
-    let input2C = C[1];
-    let elementId = input2C.id;
+    let elemChildes = e.childNodes;
+    if (elemChildes[0].type !== 'checkbox' || !elemChildes[0].checked) continue;
+    let elementId = elemChildes[1].id;
     let appId = parseInt(elementId);
     let counter = appId.toString().length;
     let contextId = parseInt(elementId.slice(counter + 1));
