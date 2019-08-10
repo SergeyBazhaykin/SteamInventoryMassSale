@@ -1,5 +1,5 @@
 const elements = document.getElementsByClassName('itemHolder');
-let totChB = 0, totCh = 0, totUn = 0, totSel = 0, totFail = 0;
+let totalCheckboxes = 0, totalSelectedCheckboxes = 0, totalUnselectedCheckboxes = 0, totalSelled = 0, totalFailed = 0;
 let lastMes3 = '', lastMes4 = '';
 
 const s = document.createElement('script');
@@ -33,7 +33,7 @@ function appStep1() {
     e.insertBefore(checkBox, e.firstElementChild);
     i++;
   }
-  totChB += i;
+  totalCheckboxes += i;
   return {added: i};
 }
 
@@ -87,28 +87,28 @@ function handleClickLog(cb) {
 
 function simsLog1(i) {
   let inn = simsLogInv.innerHTML.split('<br>');
-  inn[0] = 'SIMS log. Chechboxes: ' + totChB + ' (added: ' + i + ')';
+  inn[0] = 'SIMS log. Chechboxes: ' + totalCheckboxes + ' (added: ' + i + ')';
   simsLogInv.innerHTML = inn.join('<br>');
   simsLog2(0, i);
 }
 
 function simsLog2(i, j) {
-  totCh += i;
-  totUn += j;
+  totalSelectedCheckboxes += i;
+  totalUnselectedCheckboxes += j;
   let inn = simsLogInv.innerHTML.split('<br>');
-  inn[1] = 'Selected: ' + totCh + ' , unselected: ' + totUn;
+  inn[1] = 'Selected: ' + totalSelectedCheckboxes + ' , unselected: ' + totalUnselectedCheckboxes;
   simsLogInv.innerHTML = inn.join('<br>');
 }
 
 function simsLog3(message) {
   let inn = simsLogInv.innerHTML.split('<br>');
   if (lastMes3 === message) {
-    totSel++;
-    inn[2] = message + '. Total: ' + totSel;
+    totalSelled++;
+    inn[2] = message + '. Total: ' + totalSelled;
   } else {
-    totSel = 1;
+    totalSelled = 1;
     lastMes3 = message;
-    inn[2] = message + '. Total: ' + totSel;
+    inn[2] = message + '. Total: ' + totalSelled;
   }
   simsLogInv.innerHTML = inn.join('<br>');
 }
