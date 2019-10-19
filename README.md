@@ -1,3 +1,4 @@
+![Logo](images/SIMS_128.png)
 # SteamInventoryMassSale
 Mass selling items with user-friendly interface
 
