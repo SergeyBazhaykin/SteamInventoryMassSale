@@ -8,7 +8,7 @@ window.addEventListener('message', function(event) {
 
 function appStep3(price) {
   for (let e of elements) {
-    if (!e.hasChildNodes()) continue;
+    if (!e.hasChildNodes() || e.style.display === 'none') continue;
     let elemChildes = e.childNodes;
     if (elemChildes[0].type !== 'checkbox' || !elemChildes[0].checked) continue;
     let elementId = elemChildes[1].id;
