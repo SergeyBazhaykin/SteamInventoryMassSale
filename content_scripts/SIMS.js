@@ -1,5 +1,6 @@
 const elements = document.getElementsByClassName('itemHolder');
-let totalCheckboxes = 0, totalSelectedCheckboxes = 0, totalUnselectedCheckboxes = 0, totalSelled = 0, totalFailed = 0;
+let totalCheckboxes = 0, totalSelectedCheckboxes = 0,
+    totalUnselectedCheckboxes = 0, totalSelled = 0, totalFailed = 0;
 let lastMes3 = '', lastMes4 = '';
 
 const s = document.createElement('script');
@@ -76,7 +77,8 @@ chrome.runtime.onMessage.addListener(
 window.addEventListener('message', function(event) {
   if (event.data.type === 'page_js_log') {
     event.data.data.success ?
-        simsLog3('Selling.. (You receive: ' + event.data.data.price / 100 + 'rub)') :
+        simsLog3(
+            'Selling.. (You receive: ' + event.data.data.price / 100 + 'rub)') :
         simsLog4('Failed..' + JSON.stringify(event.data.data.error));
   }
 });
@@ -96,7 +98,8 @@ function simsLog2(i, j) {
   totalSelectedCheckboxes += i;
   totalUnselectedCheckboxes += j;
   let inn = simsLogInv.innerHTML.split('<br>');
-  inn[1] = 'Selected: ' + totalSelectedCheckboxes + ' , unselected: ' + totalUnselectedCheckboxes;
+  inn[1] = 'Selected: ' + totalSelectedCheckboxes + ' , unselected: ' +
+      totalUnselectedCheckboxes;
   simsLogInv.innerHTML = inn.join('<br>');
 }
 
