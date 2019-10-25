@@ -41,8 +41,8 @@ function appStep1() {
 function checkAll() {
   let i = 0, j = 0;
   for (let e of elements) {
-    if (e.hasChildNodes() && e.firstElementChild.type ===
-        'checkbox') {
+    if (e.hasChildNodes() && e.style.display !== 'none' &&
+        e.firstElementChild.type === 'checkbox') {
       if (e.firstElementChild.checked) {
         j++;
       } else {

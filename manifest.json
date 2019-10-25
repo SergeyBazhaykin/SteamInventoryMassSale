@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Steam Inventory Mass Sale",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Mass selling items with user-friendly interface.",
   "icons": {
     "16": "images/SIMS_16.png",
